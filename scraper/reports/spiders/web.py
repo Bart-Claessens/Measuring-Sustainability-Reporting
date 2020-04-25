@@ -7,7 +7,7 @@ from urlparse import urlparse
 import re
 
 
-from reports.items import ReportsItem
+from ..items import ReportsItem
 
 
 class WebSpider(Spider):
@@ -19,7 +19,7 @@ class WebSpider(Spider):
         super(WebSpider, self).__init__(*args, **kwargs)
         
         self.file_path = "seeds.txt"
-        self.whitelist = ['csr', 'environment', 'sustainab', 'responsib', 'footprint']
+        self.whitelist = ['csr', 'environment', 'sustainab', 'responsib', 'footprint', 'a','e','i','o']
         self.blacklist = ['document', 'blog', 'product', 'news', 'press', 'archive', 'search', 'login']
         self.extractor = LinkExtractor()
 
