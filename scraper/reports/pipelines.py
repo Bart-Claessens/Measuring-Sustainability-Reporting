@@ -2,11 +2,11 @@
 
 import pymongo
 
-from scrapy.conf import settings
+import settings
 from pymongo import MongoClient
 from pymongo.errors import DuplicateKeyError
 from scrapy.exceptions import DropItem
-from dragnet import content_extractor
+from dragnet import extract_content
 
 
 
@@ -15,7 +15,7 @@ class ContentExtractor(object):
 
     def process_item(self, item, spider):
         fullHTML = item['content']
-        content = content_extractor.analyze(fullHTML)
+        content = extract_content(fullHTML)
         item['content'] = content
 
         return item
@@ -29,11 +29,11 @@ class MongoConnector(object):
 
     def __init__(self):
         self.connection = MongoClient(
-            settings['MONGODB_SERVER'],
-            settings['MONGODB_PORT']
+            settings.MONGODB_SERVER,
+            settings.MONGODB_PORT
         )
-        self.db = self.connection[settings['MONGODB_DB']]
-        self.collection = self.db[settings['MONGODB_COLLECTION']]
+        self.db = self.connection[settings.MONGODB_DB]
+        self.collection = self.db[settings.MONGODB_COLLECTION]
     
 
     def process_item(self, item, spider):
