@@ -8,8 +8,8 @@ tasks:
       cd /workspace/dragnet &&
       pip install -r requirements.txt &&
       make install &&
-      pip install scrapy pymongo
-      cd /workspace/Measuring-Sustainability-Reporting
+      pip install scrapy pymongo &&
+      cd /workspace/Measuring-Sustainability-Reporting/scraper
     command: scrapy crawl SustainabilityBot    
 
   
