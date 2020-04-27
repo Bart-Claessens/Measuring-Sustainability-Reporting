@@ -1,8 +1,8 @@
 FROM gitpod/workspace-mongodb
                     
 USER gitpod
-RUN git clone https://github.com/dragnet-org/dragnet.git /home/dragnet/
-WORKDIR /home/dragnet
+RUN git clone https://github.com/dragnet-org/dragnet.git /workspace/dragnet/
+WORKDIR /workspace/dragnet
 RUN pip install -r requirements.txt
 RUN make install
 RUN pip install scrapy pymongo
