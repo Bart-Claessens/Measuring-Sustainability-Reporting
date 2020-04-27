@@ -1,6 +1,6 @@
 FROM gitpod/workspace-mongodb
                     
-RUN git clone https://github.com/dragnet-org/dragnet.git /workspace/dragnet/
+RUN sudo git clone https://github.com/dragnet-org/dragnet.git /workspace/dragnet/
 WORKDIR /workspace/dragnet
 RUN pip install -r requirements.txt
 RUN make install
