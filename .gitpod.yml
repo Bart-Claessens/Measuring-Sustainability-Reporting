@@ -2,14 +2,17 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
+  - command: mkdir -p /workspace/data && mongod --dbpath /workspace/data
   - init: >
       git clone https://github.com/dragnet-org/dragnet.git /workspace/dragnet/ && 
       cd /workspace/dragnet &&
       pip install -r requirements.txt &&
       make install &&
       pip install scrapy pymongo
-  - command: mkdir -p /workspace/data && mongod --dbpath /workspace/data
-  - command: scrapy crawl SustainabilityBot
+      cd /workspace/Measuring-Sustainability-Reporting
+    command: scrapy crawl SustainabilityBot    
+
+  
 
 
 
