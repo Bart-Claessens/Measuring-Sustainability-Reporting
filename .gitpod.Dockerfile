@@ -1,10 +1,5 @@
 FROM gitpod/workspace-mongodb
                     
-RUN sudo git clone https://github.com/dragnet-org/dragnet.git /workspace/dragnet/
-WORKDIR /workspace/dragnet
-RUN pip install -r requirements.txt
-RUN make install
-RUN pip install scrapy pymongo
 USER gitpod
 
 # Install custom tools, runtime, etc. using apt-get
