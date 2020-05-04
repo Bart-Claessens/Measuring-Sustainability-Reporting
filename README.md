@@ -4,7 +4,7 @@ This will set up a new workspace, install dragnet and other dependencies. It wil
 
 For demo purposes the scraper will start scraping uclouvain.be for the original keywords plus 'a','e','i','o'.
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/<org>/<repo>)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Bart-Claessens/Measuring-Sustainability-Reporting)
 
 # Measuring Sustainability Reporting using Web Scraping and Natural Language Processing
 
